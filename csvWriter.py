@@ -50,7 +50,7 @@ def writeRecordsToCsv(records, logFilePath):
         for record in records:
             row = []
             for field in fields:
-                row.append(record[field])
+                row.append(record.get(field, ''))
 
             writer.writerow(row)
 
