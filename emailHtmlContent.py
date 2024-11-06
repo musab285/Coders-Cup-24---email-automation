@@ -1,5 +1,5 @@
 
-def getHtmlContent(TeamName, Date, Day, Time, Venue tableData):
+def getHtmlContent(TeamName, Date, Day, Time, Venue, attendance_code, tableData):
     tableContent = ""
     for member in tableData:
         if member["Name"] != "":
@@ -15,7 +15,7 @@ def getHtmlContent(TeamName, Date, Day, Time, Venue tableData):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Coders Cup'24 Registration</title>
+        <title>Competition Details for Coder's Cup</title>
     </head>
     <body style="margin: 0; padding: 0; background-color: transparent; font-family: Arial, Helvetica, sans-serif;">
         <!-- Main Table Container -->
@@ -53,12 +53,18 @@ def getHtmlContent(TeamName, Date, Day, Time, Venue tableData):
                                 
                                 <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">We’re thrilled to welcome you to this year’s Coder's Cup! Please find the event details below:</p>
                                 
-                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">It has come to our attention that your team submitted an incorrect or inappropriate Vjudge username. To ensure your participation in the Coders Cup, please provide a valid username. Those who fail to submit a valid username will be disqualified from the competition.</p>
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">Event Date: {Date} <br>Day: {Day} <br>Time: {Time} <br>Venue: {Venue} </p> 
                                 
-                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">To create a new Vjudge account, please watch the following video: https://youtu.be/aMNqSRqdYWQ</p>
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">Attendance Code: <strong>{attendance_code} </strong></p>
 
-                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">Once you have your new username, please fill out the following Google Form to update your information: https://forms.gle/5QyibjQGFqT4Mkj86</p>
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">To mark your attendance, please visit our website at the time of the competition and enter the code here: http://attendance.acmnuceskhi.com</p>
 
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">Important: You must be present in the vicinity of the lab, and attendance can only be marked during the competition timeframe.</p>
+
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">Additionally, if you arrive more than 15 minutes after the scheduled time, you will not be allowed to participate and will be considered disqualified.</p>
+
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">We look forward to seeing you there. Let’s make this an unforgettable event!</p>
+                                
                                 <h2 style="color: #00b7c2; font-family: Arial, Helvetica, sans-serif;">Team Details</h2>
                                 
                                 <!-- Team Details Table -->
