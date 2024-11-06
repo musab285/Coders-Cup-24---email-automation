@@ -11,7 +11,7 @@ from email.message import EmailMessage
 password=""
 
 def sendAttachmentMail(emailAddress, htmlContent):
-    sender = "acm.khi@nu.edu.pk"  # Your sender email
+    sender = ""  # Your sender email
     senderPassword = password
     recieverMail = emailAddress
     msg = EmailMessage()
