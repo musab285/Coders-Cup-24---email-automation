@@ -5,6 +5,7 @@ from emailHtmlContent import getHtmlContent
 import easygui
 
 
+
 print("==================================================================")
 print("         CODER'S CUP VJUDJE WARNING AUTOMATION 2024 ")
 print("==================================================================\n")
@@ -36,25 +37,39 @@ try:
         memberData = unsentRecords[i]
         
         tabledata = [
-                {"Name": memberData.get("Leader Name", "Unknown"), "ID": memberData.get("Leader Id", 0)},
+                {"Name": memberData.get("Leader Name", "Unknown"), "ID": memberData.get("Leader ID", 0)},
                 {"Name": memberData.get("mem1Name", "Unknown"), "ID": memberData.get("mem1Id", 0)},
                 {"Name": memberData.get("mem2Name", "Unknown"), "ID": memberData.get("mem2Id", 0)}
                 ]
+        
+        # Define your date in the format YYYY-MM-DD
+        date_str = memberData.get("Date", "unknown")
 
-        htmlContent = getHtmlContent(memberData["teamName"], Date, Day, Time, Venue, tabledata)
+
+        # Convert the string to a datetime object
+        date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+
+        # Format the date in words
+        formatted_date = date_obj.strftime("%B %d, %Y")
+        Day = memberData.get("Day", "unknown")
+        Time = memberData.get("Time", "unknown")
+        Venue = memberData.get("Venue", "unknown")
+        attendance_code = memberData.get("Attendance Code", "unknown")
+
+        htmlContent = getHtmlContent(memberData["Team Name"], formatted_date, Day, Time, Venue, attendance_code, tabledata)
 
         # sort the data according to if the mail was sent or not
         if (
-            sendAttachmentMail(memberData["leaderEmail"], htmlContent)
+            sendAttachmentMail(memberData["Leader Email"], htmlContent)
             == True
         ):
             unsentRecords.remove(memberData)
             sentRecords.append(memberData)
-            processLogFile.write(f"{datetime.now()} : SUCCESSFULLY SENT TO {memberData["leaderEmail"]}\n")
+            processLogFile.write(f"{datetime.now()} : SUCCESSFULLY SENT TO {memberData["Leader Email"]}\n")
             i -= 1
             unsentLength -= 1
         else:
-            processLogFile.write(f"{datetime.now()} : FAILED TO SEND TO {memberData["leaderEmail"]}\n")
+            processLogFile.write(f"{datetime.now()} : FAILED TO SEND TO {memberData["Leader Email"]}\n")
         i += 1
 
 
