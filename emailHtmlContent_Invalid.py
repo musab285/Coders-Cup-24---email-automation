@@ -55,7 +55,7 @@ def getHtmlContent(TeamName, Date, Day, Time, Venue, attendance_code, tableData)
 
                                 <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;"><strong>Action Required:</strong> Update Your Vjudge Username</p>
 
-                                p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">It has come to our attention that your team submitted an incorrect or inappropriate Vjudge username. To ensure your participation, please provide a valid username. Teams failing to update their username will be disqualified.</p>
+                                <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">It has come to our attention that your team submitted an incorrect or inappropriate Vjudge username. To ensure your participation, please provide a valid username. Teams failing to update their username will be disqualified.</p>
 
                                 <p style="color: #ffffff; line-height: 1.6; font-family: Arial, Helvetica, sans-serif;">To create a new Vjudge account, please refer to this guide: https://youtu.be/aMNqSRqdYWQ.<br>After verification of your Vjudge Username, please submit your updated username via this Google Form: https://forms.gle/5QyibjQGFqT4Mkj86.</p>
                                 
