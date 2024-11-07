@@ -1,5 +1,5 @@
 from datetime import datetime
-from sendAttachedMail import sendAttachmentMail
+from sendAttachedMail_valid import sendAttachmentMail
 from csvWriter import writeRecordsToCsv, readRecordsFromCsv, readRecordsFromExcel
 from emailHtmlContent import getHtmlContent
 import easygui
