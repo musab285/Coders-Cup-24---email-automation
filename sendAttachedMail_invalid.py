@@ -8,14 +8,14 @@ from email.message import EmailMessage
 # passFile = open("pass.txt", "r")
 # password = passFile.readlines(  )[0].lstrip().rstrip()
 
-password="zlsx armp djen lqkn"
+password=""
 
 def sendAttachmentMail(emailAddress, htmlContent):
     sender = "acm.khi@nu.edu.pk"  # Your sender email
     senderPassword = password
     recieverMail = emailAddress
     msg = EmailMessage()
-    msg["Subject"] = "Competition Details for Coder's Cup"
+    msg["Subject"] = "Important Coder's Cup Details & Vjudge Username Update"
     msg["From"] = sender
     msg["To"] = recieverMail
 
